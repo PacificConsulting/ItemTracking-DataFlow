@@ -22,7 +22,7 @@ codeunit 50150 "Events Subscribers"
     [EventSubscriber(ObjectType::Page, Page::"Item Tracking Lines", 'OnRegisterChangeOnBeforeAddItemTrackingToTempRecSet', '', false, false)]
     local procedure OnRegisterChangeOnBeforeAddItemTrackingToTempRecSet(var OldTrackingSpecification: Record "Tracking Specification"; var NewTrackingSpecification: Record "Tracking Specification"; CurrentSignFactor: Integer; var TempReservEntry: Record "Reservation Entry");
     begin
-        OldTrackingSpecification."Sell Status" := OldTrackingSpecification."Sell Status"::" ";
+        OldTrackingSpecification."Sell Status" := NewTrackingSpecification."Sell Status"::" ";
     end;
 
     [EventSubscriber(ObjectType::Page, Page::"Item Tracking Lines", 'OnAfterEntriesAreIdentical', '', false, false)]
